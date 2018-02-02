@@ -1,0 +1,27 @@
+{
+  "name": "trie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "net-mainnet": "sh ./mainnet.sh",
+    "net-rinkeby": "sh ./rinkeby.sh",
+    "net-ropsten": "sh ./ropsten.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bignumber.js": "^5.0.0",
+    "ethereumjs-block": "^1.7.0",
+    "ethereumjs-util": "^5.1.3",
+    "level": "^2.1.1",
+    "leveldown": "^2.1.1",
+    "levelup": "^2.0.1",
+    "memdown": "^1.4.1",
+    "merkle-patricia-tree": "^2.3.0",
+    "rlp": "^2.0.0",
+    "web3": "^0.20.4"
+  }
+}
