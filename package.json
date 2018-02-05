@@ -8,7 +8,7 @@
     "net-mainnet": "sh ./mainnet.sh",
     "net-rinkeby": "sh ./rinkeby.sh",
     "net-ropsten": "sh ./ropsten.sh",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "author": "",
   "license": "ISC",

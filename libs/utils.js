@@ -1,3 +1,4 @@
+var ethUtil = require('ethereumjs-util');
 var BigNumber = require('bignumber.js');
 
 var Utils = function () {}
@@ -39,6 +40,10 @@ Utils.stringToHex = function (tmp) {
 
 Utils.decimalToHex = function (dec) {
     return new BigNumber(dec).toString(16);
+}
+
+Utils.sha3 = function (input) {
+    return ethUtil.sha3(input);
 }
 
 module.exports = Utils;

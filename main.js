@@ -15,7 +15,7 @@ const suffix = utils.stringToHex('n');
 /**
  * Test leveldb
  */
-var blockNumber = 2571673;
+var blockNumber = 1038777;
 var hexBlockNumber = utils.padLeft(utils.decimalToHex(blockNumber), 16);
 var keyString = prefix + hexBlockNumber + suffix;
 var key = new Buffer(keyString, 'hex');
@@ -39,6 +39,9 @@ db.get(key, function (er, value) {
         var block = new ethBlock.Header(value);
         var stateRoot = block.stateRoot;
         console.log('State Root:', stateRoot);
+
+        // Check state root in db
+        trie.checkRoot(stateRoot)
 
         // db.get(stateRoot, function (er, data) {
         //     if (er) throw new Error(er);

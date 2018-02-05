@@ -4,6 +4,12 @@ var db = global.db;
 
 var Trie = function () {}
 
+Trie.trie = function (rootHash) {
+    var root = new Buffer(rootHash, 'hex');
+    var trie = new merklePatriciaTree(db, root);
+    return trie;
+}
+
 Trie.getInfoByAddress = function (rootHash, address) {
     var root = new Buffer(rootHash, 'hex');
     var address = new Buffer(address, 'hex');
@@ -34,7 +40,7 @@ Trie.checkRoot = function (rootHash) {
     var root = new Buffer(rootHash, 'hex');
     var trie = new merklePatriciaTree(db, root);
     trie.checkRoot(rootHash, function (er, re) {
-        return console.log(er, re);
+        return console.log('Check root:', er, re);
     });
 }
 
