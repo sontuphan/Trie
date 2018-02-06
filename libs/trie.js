@@ -1,4 +1,4 @@
-var merklePatriciaTree = require('merkle-patricia-tree/secure');
+var merklePatriciaTree = require('merkle-patricia-tree');
 var rlp = require('rlp');
 var db = global.db;
 

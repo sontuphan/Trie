@@ -65,7 +65,8 @@ db.get(key, function (er, value) {
         // recurve(stateRoot, 0);
 
         var address = '0x6512b9E5ed91DbA434E19DBdeC4229bEBEa3e350';
-        var keyAddress = utils.getNaked(address);
+        var hash = utils.sha3(address).toString('hex');
+        var keyAddress = utils.getNaked(hash);
         trie.getInfoByAddress(stateRoot, keyAddress);
     });
 });
