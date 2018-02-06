@@ -1,17 +1,17 @@
-var merklePatriciaTree = require('merkle-patricia-tree');
+var merklePatriciaTree = require('merkle-patricia-tree/secure');
 var rlp = require('rlp');
 var db = global.db;
 
 var Trie = function () {}
 
-Trie.trie = function (rootHash) {
-    var root = new Buffer(rootHash, 'hex');
+Trie.trie = function (root) {
+    var root = new Buffer(root, 'hex');
     var trie = new merklePatriciaTree(db, root);
     return trie;
 }
 
-Trie.getInfoByAddress = function (rootHash, address) {
-    var root = new Buffer(rootHash, 'hex');
+Trie.getInfoByAddress = function (root, address) {
+    var root = new Buffer(root, 'hex');
     var address = new Buffer(address, 'hex');
     var trie = new merklePatriciaTree(db, root);
 
@@ -23,8 +23,8 @@ Trie.getInfoByAddress = function (rootHash, address) {
     });
 }
 
-Trie.getTrieByStream = function (rootHash) {
-    var root = new Buffer(rootHash, 'hex');
+Trie.getTrieByStream = function (root) {
+    var root = new Buffer(root, 'hex');
     var trie = new merklePatriciaTree(db, root);
 
     var stream = trie.createReadStream().on('data', function (data) {
@@ -36,10 +36,10 @@ Trie.getTrieByStream = function (rootHash) {
     });
 }
 
-Trie.checkRoot = function (rootHash) {
-    var root = new Buffer(rootHash, 'hex');
+Trie.checkRoot = function (root) {
+    var root = new Buffer(root, 'hex');
     var trie = new merklePatriciaTree(db, root);
-    trie.checkRoot(rootHash, function (er, re) {
+    trie.checkRoot(root, function (er, re) {
         return console.log('Check root:', er, re);
     });
 }
