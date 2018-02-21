@@ -43,29 +43,9 @@ db.get(key, function (er, value) {
         // Check state root in db
         trie.checkRoot(stateRoot);
 
-        // Try a recursive function
-        // var recurve = function (_root, i) {
-        //     db.get(_root, function (er, value) {
-        //         if (er) throw new Error(er);
-        //         value = rlp.decode(value);
-        //         console.log(i, value);
-
-        //         if (value.length == 17) {
-        //             recurve(value[0], ++i);
-        //         } else {
-        //             console.log(value[0].toString('hex').length)
-        //             console.log("\n");
-        //             value = rlp.decode(value[1]);
-        //             console.log(value);
-
-        //             trie.checkRoot(value[2]);
-        //         }
-        //     });
-        // }
-        // recurve(stateRoot, 0);
-
         var address = '0x6512b9E5ed91DbA434E19DBdeC4229bEBEa3e350';
         var hash = utils.sha3(address).toString('hex');
+        console.log('Hash key:', hash, hash.length);
         var keyAddress = utils.getNaked(hash);
         trie.getInfoByAddress(stateRoot, keyAddress);
     });

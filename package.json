@@ -8,7 +8,7 @@
     "net-mainnet": "sh ./mainnet.sh",
     "net-rinkeby": "sh ./rinkeby.sh",
     "net-ropsten": "sh ./ropsten.sh",
-    "test": "node test.js"
+    "test": "nodemon ./test/test.js"
   },
   "author": "",
   "license": "ISC",
