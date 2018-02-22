@@ -36,5 +36,5 @@ traverse(stateRoot).then(re => {
 }).then(re => {
     return traverse(re[13]); // d
 }).then(re => {
-    return traverse(re[9]);  // 9
+    return traverse(re[9]); // 9
 })
