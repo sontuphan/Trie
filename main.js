@@ -4,7 +4,16 @@ var ethBlock = require('ethereumjs-block');
 var rlp = require('rlp');
 
 var utils = require('./libs/utils');
+var geth = require('./libs/geth');
 var trie = require('./libs/trie');
+
+
+/**
+ * For debugging
+ */
+console.log("For debugging:");
+geth.getStateRoot(2596315);
+console.log("\n");
 
 /**
  * Constants
