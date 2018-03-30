@@ -4,9 +4,17 @@
 * Install NodeJS
 * Install Nodemon
 ### How to start?
+* Pre-start (always run these first)
 ```
-sh ./ropsten.sh
 npm install
+npm run net-ropsten
+```
+* For testing
+```
+npm test
+```
+* For running
+```
 npm start
 ```
 ### Wanna personalize
