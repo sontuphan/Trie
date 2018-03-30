@@ -5,6 +5,7 @@
 * Install Nodemon
 ### How to start?
 ```
+sh ./ropsten.sh
 npm install
 npm start
 ```
